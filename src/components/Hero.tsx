@@ -2,12 +2,10 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles, Users, BookOpen, Target } from 'lucide-react';
 import heroImage from '@/assets/hero-education.jpg';
+import { useNavigate } from 'react-router-dom';
 
 export default function Hero() {
-  const scrollToGenerator = () => {
-    const element = document.getElementById('quiz-generator');
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const navigate = useNavigate();
 
   return (
     <section className="min-h-screen gradient-subtle flex items-center py-20 px-4">
@@ -70,7 +68,7 @@ export default function Hero() {
               <Button 
                 variant="hero" 
                 size="xl" 
-                onClick={scrollToGenerator}
+                onClick={() => navigate('/generate-quiz')}
                 className="flex-1 sm:flex-none"
               >
                 Mulai Buat Soal
